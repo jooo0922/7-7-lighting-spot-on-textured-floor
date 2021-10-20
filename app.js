@@ -290,7 +290,7 @@ function setupTextures() {
 function setupLights() {
   // gl.uniform3fv(WebGLUniformLocation, 빛 정보 배열)로 프래그먼트 셰이더에 각각의 유니폼 변수에 두 번째 인자를 업로드해줌.
   gl.uniform3fv(pwgl.uniformLightPositionLoc, [0.0, 10.0, -10.0]); // 빛(광원)의 위치 데이터
-  gl.uniform3fv(pwgl.uniformSpotDirectionLoc, [0.0, -1.0, 0.0]); // spot light 광원이 방출되는 방향 (= 원뿔 축)
+  gl.uniform3fv(pwgl.uniformSpotDirectionLoc, [0.0, -1.0, 0.0]); // spot light 광원이 방출되는 방향 (= 원뿔 축) -> spotlight가 아래쪽(음의 y축 방향)으로 내리꽂으니까 y좌표값만 -1로 전달해준 것 같음.
   gl.uniform3fv(pwgl.uniformAmbientLightColorLoc, [0.3, 0.3, 0.3]); // 앰비언트 광원 성분 * 앰비언트 재질 특성을 사전에 곱한 값
   gl.uniform3fv(pwgl.uniformDiffuseLightColorLoc, [0.9, 0.9, 0.9]); // 디퓨즈 광원 성분 * 디퓨즈 재질 특성을 사전에 곱한 값
   gl.uniform3fv(pwgl.uniformSpecularLightColorLoc, [0.0, 0.0, 0.0]); // 스펙큘러 광원 성분 * 스펙큘러 재질 특성을 사전에 곱한 값
